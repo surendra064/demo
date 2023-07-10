@@ -1,6 +1,7 @@
 import cv2 as cv
 import pytesseract as pyt
 
+
 img=cv.imread("images/img.jpeg")
 # def resizeframe(frame,scale=0.75):
 #     width=int(img.shape[1]*scale)
@@ -11,8 +12,10 @@ img=cv.imread("images/img.jpeg")
 
 
 # cv.destroyAllWindows()
-resizdd=cv.cvtColor(img,cv.COLOR_BGR2RGB)
-cv.imshow("inoice",resizdd)
-cv.waitKey(1)
-text=pyt.image_to_string(img)
+# resizdd=cv.cvtColor(img,cv.COLOR_BGR2RGB)
+resizdd = cv.Canny(img, 100, 200)
+cv.imshow('edge', resizdd)
+cv.waitKey(0)
+cv.destroyAllWindows()
+text=pyt.image_to_string(resizdd)
 print(text)
