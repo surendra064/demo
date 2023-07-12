@@ -22,3 +22,5 @@ df2=df.loc[(df["rating"]=="1 star"),['store_name',"review"]]#gives stire name an
 df3=df.iloc[:2,:]#rows,coloumn
 print(df)#only rows can be sliced
 
+
+
